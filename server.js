@@ -16,6 +16,10 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
 
+app.get("/api/welcome", (req, res) => {
+  res.send("Welcome to Gateguard API");
+});
+
 app.use("/api", require("./routes/dashboard"));
 app.use("/api/create", require("./routes/create"));
 app.use("/api/update-remove", require("./routes/update-remove"));
